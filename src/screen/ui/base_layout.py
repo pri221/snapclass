@@ -13,15 +13,16 @@ def style_background_home():
                 padding:2.5rem !important;
                 border-radius:5rem !important;
             }
+            
         </style>
     """, unsafe_allow_html=True)
 
-def style_home_dashboard():
+def style_background_dashboard():
 
     st.markdown("""
     <style>
         .stApp{
-            background: ##E0E2FF !important;
+            background: #E0E2FF !important;
         }
 
 
@@ -46,7 +47,7 @@ def style_base_layout():
 
         h1{
             font-family: 'Climate Crisis', sans-serif !important;
-            font-size: 3.5rem !important;
+            font-size: 2.0rem !important;
             line-height:1.1 !important;
             margin-bottom:0rem !important;
         }
@@ -93,6 +94,42 @@ def style_base_layout():
         button:hover{
             transform: scale(1.05)
         }
+
+        /* --- INPUT FIELD STYLING ADDED HERE --- */
+
+        /* Labels ("Enter username", "Enter password") ko Black karne ke liye */
+        div[data-testid="stTextInput"] label p {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        
+
+        /* Target Streamlit text input wrapper */
+        div[data-testid="stTextInput"] > div > div {
+            background-color: #FFFFFF !important;
+        }
+        
+        /* Target inner BaseWeb input elements */
+        div[data-baseweb="base-input"] {
+            background-color: #FFFFFF !important;
+        }
+
+        /* Target the actual input field and text color */
+        div[data-testid="stTextInput"] input {
+            background-color: #FFFFFF !important;
+            color: #000000 !important;
+        }
+
+        /* Target placeholder text color */
+        div[data-testid="stTextInput"] input::placeholder {
+            color: #666666 !important;
+        }
+
+        div[data-testid="stCameraInput"] label p {
+        color: #000000 !important;
+        font-weight: 600;
+        }
+
 
     </style>
     """, unsafe_allow_html=True)
