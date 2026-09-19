@@ -32,3 +32,7 @@ def teacher_login(username: str, password: str) -> bool:
         if check_pass(password, teacher['password']):
             return teacher
     return None
+
+def get_all_students():
+    response = supabase.table('student').select("*").execute()
+    return response.data
